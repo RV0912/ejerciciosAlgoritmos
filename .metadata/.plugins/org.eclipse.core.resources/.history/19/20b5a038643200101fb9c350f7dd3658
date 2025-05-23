@@ -1,0 +1,46 @@
+package Ejercicio_49_RV;
+
+import java.util.Scanner;
+
+public class Ejercicio_49_RV {
+	static String ape;
+	static float altura = 1.8f;
+
+	public static void ingresarNombre() {
+		Scanner ingreso = new Scanner(System.in);
+		String nom;
+
+		System.out.println("ingrese su nombre: ");
+		nom = ingreso.next();
+		System.out.println("ingrese su apellido: ");
+		ape = ingreso.next();
+		/*
+		 * la funcion no tiene parametros ni argumento pq cuando la llamamos no le damos
+		 * info solo hacemos q ejecute su codigo Un parámetro es como una caja vacía que
+		 * una función espera recibir cuando se ejecuta. Un argumento es el valor real
+		 * que llenará esa caja cuando se llame a la función.
+		 * 
+		 * 
+		 * la variable local es nom ya que solo esta en la funcion la variable global es
+		 * la que esta afuara de las funciones main e ingresar nombre
+		 * 
+		 * la principal dif es q la varible global funciona en todas las funciones y las
+		 * locales solo en sus respectivas funciones
+		 * 
+		 * otra es que las variables globales guardan su valor mientras el programa se
+		 * esta ejecutando
+		 * 
+		 * 
+		 */
+
+	}
+
+	public static float almacenarAltura(float cm) {
+        return cm;
+	}
+	public static void main(String[] args) {
+		ingresarNombre();
+		 float alt = almacenarAltura(altura); 
+	     System.out.println("Altura: " + alt);
+	}
+}

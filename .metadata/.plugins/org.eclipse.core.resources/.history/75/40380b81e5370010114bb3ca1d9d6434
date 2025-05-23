@@ -1,0 +1,111 @@
+package Ejercicio_47_RV;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Ejercicio_47_RV {
+
+	public static void main(String[] args) {
+		int num, num2, num3, num4;
+		ArrayList<Integer> nums = new ArrayList<>();
+		Scanner ingreso = new Scanner(System.in);
+		nums.add(1011);
+		nums.add(2367);
+		nums.add(8748);
+		nums.add(9121);
+		nums.add(817);
+		nums.add(6423);
+		nums.add(2034);
+		ArrayList<String> names = new ArrayList<>();
+		names.add("Enrique");
+		names.add("Liliana");
+		names.add("Lucas");
+		names.add("Juan");
+		names.add("Fiorella");
+		names.add("Ariel");
+		names.add("Daiana");
+
+		System.out.println("Desea borrar(1), agregar(2) o buscar(3) algun elemento: ");
+		num = ingreso.nextInt();
+
+		if (num == 1) {
+			System.out.println("Desea borrar el numero(1) o el nombre(2)?: ");
+			num2 = ingreso.nextInt();
+
+			if (num2 == 1) {
+
+				System.out.println(nums);
+				System.out.println("Cual num deseas borrar?:");
+				int Borar = ingreso.nextInt();
+				nums.remove(Integer.valueOf(Borar));
+				System.out.println(nums);
+
+			}
+
+			else if (num2 == 2) {
+
+				System.out.println(names);
+				System.out.println("Cual nombre deseas borrar?:");
+				String Borar2 = ingreso.next().toLowerCase();
+
+				char letra1Borar2 = Borar2.charAt(0);
+				letra1Borar2 = Character.toUpperCase(letra1Borar2);
+
+				String subCadenaBorar2 = Borar2.substring(1);
+
+				String Borar2Convertido = letra1Borar2 + subCadenaBorar2;
+
+				names.remove(Borar2Convertido);
+				System.out.println(names);
+			}
+
+		}
+
+		if (num == 2) {
+			System.out.println("Desea agregar un numero(1) o un nombre(2)?: ");
+			num3 = ingreso.nextInt();
+
+			if (num3 == 1) {
+
+				System.out.println(nums);
+				System.out.println("Ingrese el numero que desea agregar:");
+				int Agregar = ingreso.nextInt();
+				nums.add(Agregar);
+				System.out.println(nums);
+
+			}
+
+			else if (num3 == 2) {
+
+				System.out.println(names);
+				System.out.println("Ingrese el nombre deseas agregar:");
+				String Agregar1 = ingreso.next().toLowerCase();
+
+				char letra1Agregar1 = Agregar1.charAt(0);
+				letra1Agregar1 = Character.toUpperCase(letra1Agregar1);
+
+				String subCadenaAgregar1 = Agregar1.substring(1);
+
+				String Agregar1Convertido = letra1Agregar1 + subCadenaAgregar1;
+
+				names.add(Agregar1Convertido);
+				System.out.println(names);
+			}
+
+		}
+		if (num == 3) {
+			System.out.println(nums);
+			System.out.println("Ingrese el numero del socio que deseas buscar: ");
+			num4 = ingreso.nextInt();
+			int posicionEnLaLista = nums.indexOf(num4);
+			String nombre = names.get(posicionEnLaLista);
+			
+			System.out.println("El num de socio: "+num4+"\nNombre de socio: "+nombre);
+			
+
+		}
+
+		
+	}
+	}
+
